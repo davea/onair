@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/sh</string>
+		<string>-c</string>
+		<string>pipenv run python onair.py 2>> /Users/USER/Code/onair/debug.log >> /Users/USER/Code/onair/debug.log</string>
+	</array>
+	<key>WorkingDirectory</key>
+	<string>/Users/USER/Code/onair</string>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>MQTT_BROKER</key>
+		<string>mqtt.example.org</string>
+		<key>MQTT_TOPICS</key>
+		<string>control/lighting/testlight/power:1:0</string>
+		<key>PATH</key>
+		<string>/usr/local/bin:/usr/bin/:/bin:/usr/sbin:/sbin</string>
+		<key>WORKON_HOME</key>
+		<string>/Users/USER/.virtualenvs</string>
+		<key>LC_CTYPE</key>
+		<string>en_GB.UTF-8</string>
+		<key>LANG</key>
+		<string>en_GB.UTF-8</string>
+	</dict>
+	<key>Label</key>
+	<string>me.davea.onair</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>KeepAlive</key>
+	<true/>
+</dict>
+</plist>

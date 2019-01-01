@@ -17,10 +17,8 @@ def send_message(on_air):
 def main():
     for line in tail("-n", 0, "-f", expanduser(LOG_FILE), _iter=True):
         if line.find("Video Device became active") > -1:
-            print("Camera is active")
             send_message(True)
         elif line.find("Video Device became inactive") > -1:
-            print("Camera is inactive")
             send_message(False)
 
 
