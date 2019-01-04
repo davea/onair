@@ -6,5 +6,4 @@ e.g. setting a particular lighting environment or switching on an "ON AIR" sign.
 
 ## Installation
 
-Depends on [OverSight](https://objective-see.com/products/oversight.html) installed
-and configured to log webcam activity to a file.
+The camera detection code is run as a little Objective-C helper, so build that by running `make`.
