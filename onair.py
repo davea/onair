@@ -13,14 +13,17 @@ def send_message(on_air):
         mosquitto_pub("-h", MQTT_BROKER, "-t", topic, "-m", payload)
 
 def main():
-    onair_helper = Command("./onair_helper")
-    for line in onair_helper(_iter=True):
-        if line.find("Camera active") > -1:
-            print("Switching on because:", line)
-            send_message(True)
-        elif line.find("Camera inactive") > -1:
-            print("Switching off because:", line)
-            send_message(False)
+    onair_helper = Command("./onair_helper")(_iter=True)
+    try:
+        for line in onair_helper:
+            if line.find("Camera active") > -1:
+                print("Switching on because:", line)
+                send_message(True)
+            elif line.find("Camera inactive") > -1:
+                print("Switching off because:", line)
+                send_message(False)
+    finally:
+        onair_helper.terminate()
 
 
 if __name__ == "__main__":
