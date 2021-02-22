@@ -10,6 +10,9 @@ load_dotenv()
 import os
 import atexit
 
+import logging
+logging.basicConfig(level=logging.INFO)
+
 from sh import coap_client, pkill, Command
 
 TRADFRI_IP = os.environ['TRADFRI_IP']

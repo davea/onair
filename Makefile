@@ -8,3 +8,7 @@ onair_helper: onair_helper.m
 
 clean:
 	rm onair_helper
+
+reload:
+	launchctl unload ~/Library/LaunchAgents/me.davea.onair.plist
+	launchctl load ~/Library/LaunchAgents/me.davea.onair.plist
